@@ -55,3 +55,4 @@
 (my/load "lsp")        ; eglot + language modes
 (my/load "ui")         ; theme, modeline, font
 (my/load "org")        ; org-mode + evil-org
+(my/load "tools")      ; magit, markdown

@@ -61,6 +61,12 @@ Leader key is `,`.
 | `,ca` | Code actions |
 | `,cr` | Rename symbol |
 
+### Git (Magit)
+| Key | Action |
+|-----|--------|
+| `,gs` | Magit status |
+| `,gb` | Magit blame |
+
 ### Org
 | Key | Action |
 |-----|--------|
