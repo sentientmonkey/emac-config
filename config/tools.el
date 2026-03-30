@@ -8,6 +8,27 @@
   (setq neo-smart-open t))
 
 
+;; ── Terminal (eat) ───────────────────────────────────────────
+;; Full terminal emulator in Emacs. Pure Elisp — no compilation needed.
+;; Runs claude-code, htop, or any interactive CLI correctly.
+;;
+;; Modes inside eat:
+;;   char mode      — all keystrokes go to the terminal (default when open)
+;;   semi-char mode — C-c prefix goes to Emacs, everything else to terminal
+;;   emacs mode     — full Emacs/evil keybindings, useful for scrolling output
+;;
+;; Switch modes: C-c M-d (char), C-c M-j (semi-char), C-c M-k (emacs/line)
+(use-package eat
+  :config
+  ;; ,ot opens a terminal in a split below, like a tmux pane
+  (evil-define-key 'normal 'global (kbd "<leader>ot")
+    (lambda ()
+      (interactive)
+      (split-window-below)
+      (other-window 1)
+      (eat))))
+
+
 ;; ── Magit ────────────────────────────────────────────────────
 ;; Git interface. The killer Emacs app for git — far beyond what you
 ;; can do in a terminal. Stage individual hunks, interactively rebase,
