@@ -17,10 +17,16 @@
   (marginalia-mode))
 
 ;; Consult: the search/navigation commands
-;; C-p = find files, C-s = ripgrep, ,fb = buffers, ,fh = info
+;;
+;; C-p   find files (overrides `previous-line' globally — worth it)
+;; C-s   search in buffer with preview (replaces basic isearch)
+;; C-c s ripgrep across project
+;; C-c b switch buffer
+;; C-c h search info/docs
 (use-package consult
   :config
-  (evil-define-key 'normal 'global (kbd "C-p")        'consult-fd)
-  (evil-define-key 'normal 'global (kbd "C-s")        'consult-ripgrep)
-  (evil-define-key 'normal 'global (kbd "<leader>fb") 'consult-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>fh") 'consult-info))
+  (global-set-key (kbd "C-p")   'consult-fd)
+  (global-set-key (kbd "C-s")   'consult-line)
+  (global-set-key (kbd "C-c s") 'consult-ripgrep)
+  (global-set-key (kbd "C-c b") 'consult-buffer)
+  (global-set-key (kbd "C-c h") 'consult-info))

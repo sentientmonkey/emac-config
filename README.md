@@ -41,38 +41,43 @@ straight/
 
 ## Keybindings
 
-Leader key is `,`.
-
 ### Navigation
 | Key | Action |
 |-----|--------|
 | `C-p` | Find files (fd) |
-| `C-s` | Live grep (ripgrep) |
-| `,fb` | Switch buffer |
-| `,fh` | Search info/docs |
+| `C-s` | Search in buffer |
+| `C-c s` | Ripgrep project |
+| `C-c b` | Switch buffer |
+| `C-c h` | Search info/docs |
 
 ### LSP
 | Key | Action |
 |-----|--------|
-| `gd` | Go to definition |
-| `gD` | Go to definition (split) |
-| `gr` | Find references |
-| `K` | Hover docs |
-| `,ca` | Code actions |
-| `,cr` | Rename symbol |
+| `M-.` | Go to definition |
+| `M-,` | Jump back |
+| `M-?` | Find references |
+| `C-c c d` | Hover docs |
+| `C-c c a` | Code actions |
+| `C-c c r` | Rename symbol |
 
 ### Git (Magit)
 | Key | Action |
 |-----|--------|
-| `,gs` | Magit status |
-| `,gb` | Magit blame |
+| `C-c g s` | Magit status |
+| `C-c g b` | Magit blame |
 
 ### Org
 | Key | Action |
 |-----|--------|
-| `,oo` | Open notes file |
-| `,oa` | Org agenda |
-| `,oc` | Org capture |
+| `C-c o o` | Open notes file |
+| `C-c o a` | Org agenda |
+| `C-c o c` | Org capture |
+
+### Tools
+| Key | Action |
+|-----|--------|
+| `C-c e` | Toggle neotree |
+| `C-c t` | Open terminal split |
 
 ## LSP
 

@@ -1,5 +1,5 @@
 (use-package org
-  :straight nil  ; built into Emacs — don't try to fetch from MELPA
+  :straight nil
   :config
   (setq org-directory "~/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -14,14 +14,7 @@
           ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
            "* %?\n  %i\n")))
   (setq org-agenda-files (list org-directory))
-  (evil-define-key 'normal 'global (kbd "<leader>oa") 'org-agenda)
-  (evil-define-key 'normal 'global (kbd "<leader>oc") 'org-capture)
-  (evil-define-key 'normal 'global (kbd "<leader>oo")
+  (global-set-key (kbd "C-c o a") 'org-agenda)
+  (global-set-key (kbd "C-c o c") 'org-capture)
+  (global-set-key (kbd "C-c o o")
     (lambda () (interactive) (find-file org-default-notes-file))))
-
-(use-package evil-org
-  :after org
-  :hook (org-mode . evil-org-mode)
-  :config
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))

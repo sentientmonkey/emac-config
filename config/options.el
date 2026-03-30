@@ -58,3 +58,20 @@
 ;; ── Windows / Splits ─────────────────────────────────────────
 (setq split-height-threshold nil)
 (setq split-window-preferred-function 'split-window-sensibly)
+
+
+;; ── Expand Region ────────────────────────────────────────────
+;; Progressively expand selection by semantic units.
+;; Press C-= repeatedly: word → symbol → string → block → ...
+;; Press C-- to contract back.
+(use-package expand-region
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region)
+  (global-set-key (kbd "C--") 'er/contract-region))
+
+
+;; ── Commenting ───────────────────────────────────────────────
+;; comment-line toggles the current line (or selected region), then moves down.
+;; Hold C-c / to comment multiple lines in sequence, like gcc in vim-commentary.
+;; M-; (comment-dwim) still works for end-of-line comments and region comments.
+(global-set-key (kbd "C-c /") 'comment-line)

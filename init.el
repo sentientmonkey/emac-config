@@ -49,7 +49,6 @@
   (load (expand-file-name (concat "config/" file) user-emacs-directory)))
 
 (my/load "options")    ; editor behaviour, indentation, scrolling
-(my/load "evil")       ; vim keybindings
 (my/load "which-key")  ; keybinding popup
 (my/load "completion") ; vertico, orderless, marginalia, consult
 (my/load "lsp")        ; eglot + language modes
