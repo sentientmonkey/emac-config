@@ -1,3 +1,13 @@
+;; ── Neotree ──────────────────────────────────────────────────
+;; Sidebar file explorer — simpler than Treemacs, closer to nvim-tree.
+;; evil-collection handles vim bindings inside the neotree buffer.
+(use-package neotree
+  :config
+  (evil-define-key 'normal 'global (kbd "<leader>e") 'neotree-toggle)
+  ;; Open neotree at the git root, falling back to current file's directory
+  (setq neo-smart-open t))
+
+
 ;; ── Magit ────────────────────────────────────────────────────
 ;; Git interface. The killer Emacs app for git — far beyond what you
 ;; can do in a terminal. Stage individual hunks, interactively rebase,
