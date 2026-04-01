@@ -19,11 +19,16 @@
 
 
 ;; ── Terminal (eat) ───────────────────────────────────────────
+;; Full terminal emulator in Emacs. Pure Elisp — no compilation needed.
 (use-package eat
-  :config
+  :init
   (global-set-key (kbd "C-c t")
     (lambda ()
       (interactive)
       (split-window-below)
       (other-window 1)
-      (eat))))
+      (eat)))
+  :config
+  (setq eat-term-name "xterm-256color")
+  (setq eat-minimum-latency 0.002)
+  (setq eat-maximum-latency 0.02))

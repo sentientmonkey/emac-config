@@ -34,6 +34,15 @@
 (global-display-fill-column-indicator-mode t)
 
 
+;; ── Mouse ────────────────────────────────────────────────────
+;; Enable mouse support in terminal mode — click to focus windows,
+;; position cursor, and scroll. Requires a terminal that supports
+;; mouse reporting (kitty and ghostty both do).
+(xterm-mouse-mode 1)
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+
+
 ;; ── Scrolling ────────────────────────────────────────────────
 (setq scroll-margin 3)
 (setq scroll-conservatively 101)
